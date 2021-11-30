@@ -208,23 +208,26 @@ def prevalence_calculation(Y):
 
     return prevalence
 
-def R_0_estimate(households_individuals, hyperparameters_epidemic, epidemic_type, time, city, best, best_simulation, theta,):
-    # epidemic proposal
-    proposal_epidemic_ = proposal_epidemic( households_individuals, 
-                                            100,
-                                            hyperparameters_epidemic,
-                                            epidemic_type)
+# def R_0_estimate(households_individuals, hyperparameters_epidemic, epidemic_type, time, city, best, best_simulation, theta,):
+#     # epidemic proposal
+#     proposal_epidemic_ = proposal_epidemic( households_individuals, 
+#                                             100,
+#                                             hyperparameters_epidemic,
+#                                             epidemic_type)
 
-    simulation = best[city][0] 
+#     simulation = best[city][0] 
 
-    last_theta = theta[simulation][city][best_simulation[simulation][city]][:,:,-1]
+#     last_theta = theta[simulation][city][best_simulation[simulation][city]][:,:,-1]
 
-    index = tf.cast(tf.linspace((0.), (last_theta.shape[0]-1), (last_theta.shape[0])), dtype = tf.int32)
+#     index = tf.cast(tf.linspace((0.), (last_theta.shape[0]-1), (last_theta.shape[0])), dtype = tf.int32)
 
-    # Run the step 0 of the SMC
-    R_0_multi = lambda i: proposal_epidemic_.R_0_calculation( time, last_theta[i])
+#     # Run the step 0 of the SMC
+#     R_0_multi = lambda i: proposal_epidemic_.R_0_calculation( time, last_theta[i])
 
-    R_0, R_0_beta1 = tf.map_fn(fn = R_0_multi, elems = index, dtype=(tf.float32, tf.float32))
+#     R_0, R_0_beta1 = tf.map_fn(fn = R_0_multi, elems = index, dtype=(tf.float32, tf.float32))
 
-    return R_0, R_0_beta1
+#     return R_0, R_0_beta1
 
+def distances_phi(x, phi):
+    x_square = (x/1000)**2
+    return tf.exp(-x_square/(2*phi*phi))
