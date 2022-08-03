@@ -1,0 +1,157 @@
+individual_number,age,ip_sex,house_number
+0,13.0,Male ,0
+1,15.0,Male ,0
+2,39.0,Male ,0
+3,32.0,Female,0
+4,68.0,Male ,1
+5,64.0,Female,1
+6,19.0,Male ,1
+7,66.0,Female,2
+8,33.0,Female,2
+9,15.0,Male ,2
+10,18.0,Female,3
+11,0.0,Male ,3
+12,35.0,Female,3
+13,8.0,Female,3
+14,2.0,Male ,3
+15,6.0,Female,3
+16,64.0,Female,3
+17,12.0,Female,4
+18,16.0,Female,4
+19,40.0,Male ,4
+20,8.0,Male ,4
+21,18.0,Female,5
+22,48.0,Female,5
+23,6.0,Male ,5
+24,1.0,Male ,5
+25,7.0,Female,6
+26,20.0,Female,6
+27,2.0,Female,6
+28,28.0,Female,6
+29,20.0,Male ,7
+30,16.0,Female,8
+31,48.0,Female,8
+32,6.0,Female,8
+33,5.0,Female,9
+34,28.0,Female,9
+35,7.0,Male ,9
+36,40.0,Female,10
+37,12.0,Male ,10
+38,14.0,Male ,10
+39,1.0,Female,10
+40,24.0,Female,11
+41,27.0,Male ,11
+42,3.0,Male ,11
+43,18.0,Female,12
+44,0.0,Female,12
+45,9.0,Female,13
+46,39.0,Female,14
+47,18.0,Male ,14
+48,8.0,Female,14
+49,22.0,Female,15
+50,47.0,Female,15
+51,2.0,Female,16
+52,35.0,Female,16
+53,35.0,Male ,16
+54,7.0,Female,17
+55,30.0,Female,17
+56,14.0,Male ,18
+57,54.0,Male ,18
+58,6.0,Female,19
+59,10.0,Male ,19
+60,36.0,Female,20
+61,14.0,Female,20
+62,4.0,Female,21
+63,4.0,Female,21
+64,46.0,Female,21
+65,32.0,Male ,22
+66,5.0,Male ,22
+67,31.0,Female,22
+68,20.0,Female,23
+69,32.0,Female,24
+70,48.0,Male ,25
+71,11.0,Male ,25
+72,5.0,Male ,26
+73,32.0,Female,26
+74,20.0,Female,27
+75,12.0,Female,28
+76,0.0,Male ,28
+77,29.0,Female,28
+78,44.0,Female,29
+79,8.0,Male ,29
+80,39.0,Female,30
+81,20.0,Female,30
+82,76.0,Male ,31
+83,42.0,Female,31
+84,20.0,Female,32
+85,48.0,Female,32
+86,14.0,Male ,33
+87,42.0,Female,33
+88,14.0,Male ,33
+89,23.0,Female,34
+90,16.0,Female,34
+91,13.0,Male ,35
+92,33.0,Female,35
+93,15.0,Female,0
+94,61.0,Male ,1
+95,57.0,Male ,1
+96,23.0,Female,2
+97,8.0,Male ,2
+98,51.0,Female,2
+99,30.0,Female,3
+100,36.0,Female,5
+101,20.0,Female,6
+102,2.0,Female,6
+103,43.0,Female,7
+104,42.0,Female,7
+105,0.0,Female,7
+106,42.0,Female,7
+107,45.0,Female,8
+108,46.0,Female,8
+109,51.0,Female,8
+110,16.0,Male ,8
+111,18.0,Female,8
+112,3.0,Female,9
+113,44.0,Female,9
+114,10.0,Female,10
+115,51.0,Male ,10
+116,42.0,Female,10
+117,19.0,Male ,10
+118,16.0,Female,12
+119,31.0,Female,13
+120,11.0,Female,13
+121,10.0,Female,13
+122,40.0,Male ,13
+123,10.0,Female,13
+124,31.0,Female,17
+125,20.0,Female,17
+126,15.0,Female,18
+127,14.0,Female,19
+128,17.0,Female,19
+129,21.0,Male ,19
+130,36.0,Female,20
+131,54.0,Female,20
+132,40.0,Female,20
+133,51.0,Female,21
+134,18.0,Male ,22
+135,31.0,Female,22
+136,45.0,Male ,22
+137,13.0,Male ,22
+138,16.0,Female,22
+139,57.0,Female,23
+140,59.0,Female,23
+141,18.0,Male ,23
+142,35.0,Male ,23
+143,66.0,Female,24
+144,18.0,Female,25
+145,8.0,Female,26
+146,26.0,Female,27
+147,59.0,Female,27
+148,39.0,Male ,28
+149,23.0,Female,30
+150,0.0,Female,30
+151,11.0,Male ,32
+152,11.0,Male ,33
+153,4.0,Male ,33
+154,27.0,Female,34
+155,19.0,Female,35
