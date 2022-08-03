@@ -3,6 +3,12 @@ We propose a novel stochastic model for the spread of antimicrobial-resistant ba
 
 # Contents
 There are three folders in the repository:
-- Experiments
-- Tutorial
+- Cleaning: containing a Jupyter notebook and some data folders for cleaning the data. The main steps consists of:
+  - clean the collected data and extract information about location, gender, income, age and colonization state over time;
+  - clean the synthetic data and extract information about location, gender, income, age
+  - join the data and get: time series to analyse + population data.
+- Experiments: containing all the main scripts for running the experiments on an a cluster, there are 3 main folders:
+  - RunEcoli: run the experiments on E. coli data;
+  - RunKpneumoniae: run the experiments on K. penumoniae data;
+  - RunRt: given the optimal parameters compute effective R and colonization state over time.
 - Cleaning
