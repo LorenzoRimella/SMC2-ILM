@@ -4,15 +4,8 @@ import tensorflow as tf
 physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-# gpu_devices = tf.config.list_physical_devices("GPU")
-# if gpu_devices:
-#     tf.config.experimental.set_virtual_device_configuration(
-#         gpu_devices[0],
-#         [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=24576)],
-#     )
-
 import sys
-sys.path.append('UC-model/Scripts/')
+sys.path.append('Experiments/Scripts/')
 
 from SyntheticHouseholds import *
 from filtering_smoothing import *
@@ -20,18 +13,18 @@ from filtering_smoothing import *
 ########################################################
 # Load the data
 ########################################################
-n_individuals_chikwawa          = np.load("UC-model/Data/Input/n_individuals_chikwawa.npy")
-n_households_chikwawa           = np.load("UC-model/Data/Input/n_households_chikwawa.npy")
-households_longitude_chikwawa   = np.load("UC-model/Data/Input/households_longitude_chikwawa.npy")
-households_latitude_chikwawa    = np.load("UC-model/Data/Input/households_latitude_chikwawa.npy")
-loc_H_I_index_chikwawa          = np.load("UC-model/Data/Input/loc_H_I_index_chikwawa.npy")
-individuals_covariates_chikwawa = np.load("UC-model/Data/Input/individuals_covariates_chikwawa.npy")
+n_individuals_chikwawa          = np.load("Experiments/Data/Input/n_individuals_chikwawa.npy")
+n_households_chikwawa           = np.load("Experiments/Data/Input/n_households_chikwawa.npy")
+households_longitude_chikwawa   = np.load("Experiments/Data/Input/households_longitude_chikwawa.npy")
+households_latitude_chikwawa    = np.load("Experiments/Data/Input/households_latitude_chikwawa.npy")
+loc_H_I_index_chikwawa          = np.load("Experiments/Data/Input/loc_H_I_index_chikwawa.npy")
+individuals_covariates_chikwawa = np.load("Experiments/Data/Input/individuals_covariates_chikwawa.npy")
 
-Y_ecoli_chikwawa = np.load("UC-model/Data/Input/Y_ecoli_chikwawa.npy")
-Y_klebs_chikwawa = np.load("UC-model/Data/Input/Y_kpneu_chikwawa.npy")
+Y_ecoli_chikwawa = np.load("Experiments/Data/Input/Y_ecoli_chikwawa.npy")
+Y_klebs_chikwawa = np.load("Experiments/Data/Input/Y_kpneu_chikwawa.npy")
 
-theta_chikwawa_ecoli   = np.load("UC-model/Data/Parameters/theta_best_chikwawa_ecoli.npy") 
-theta_chikwawa_klebs   = np.load("UC-model/Data/Parameters/theta_best_chikwawa_klebs.npy") 
+theta_chikwawa_ecoli   = np.load("Experiments/Data/Parameters/theta_best_chikwawa_ecoli.npy") 
+theta_chikwawa_klebs   = np.load("Experiments/Data/Parameters/theta_best_chikwawa_klebs.npy") 
 
 ########################################################
 # Create the household class
@@ -140,8 +133,8 @@ hyperparameters_epidemic_klebs["specificity"]           = 0.95
 # filtering
 ####################################################
 
-epidemic_type_ecoli = epidemic_type_dict["eps_3param_exp_season_coef_6"]
-epidemic_type_klebs = epidemic_type_dict["eps_3param_gauss_prop_season_coef"]
+epidemic_type_ecoli = epidemic_type_dict["eps_3param_exp_season_coef_6"]      # choose the type according to the best marginal likelihood
+epidemic_type_klebs = epidemic_type_dict["eps_3param_gauss_prop_season_coef"] # choose the type according to the best marginal likelihood
 
 # the max delta_t
 max_delta_t_ecoli   = 1
@@ -172,12 +165,12 @@ Y_complement_klebs[:] = np.NaN
 Y_klebs = np.concatenate((Y_klebs, Y_complement_klebs), axis = 0)
 
 
-file_name_ecoli = "chikwawa_filtering_ecoli"     
-file_name_klebs = "chikwawa_filtering_klebs"   
+file_name_ecoli = "chikwawa_ecoli"     
+file_name_klebs = "chikwawa_klebs"   
 
 
-file_name_ecoli = "chikwawa_filtering_ecoli"     
-file_name_klebs = "chikwawa_filtering_klebs"              
+file_name_ecoli = "chikwawa_ecoli"     
+file_name_klebs = "chikwawa_klebs"              
 
 output_ecoli = filtering_chikwawa_ecoli.filter(Y_ecoli, max_delta_t_ecoli)
 output_klebs = filtering_chikwawa_klebs.filter(Y_klebs, max_delta_t_klebs)
@@ -186,15 +179,13 @@ R_t_ecoli = tf.concat((output_ecoli[3], output_ecoli[4], output_ecoli[5]), axis 
 R_t_klebs = tf.concat((output_klebs[3], output_klebs[4], output_klebs[5]), axis = 1)
 
 data_output_name_ecoli = file_name_ecoli+"_households.npy"
-np.save("UC-model/Data/Output/" + data_output_name_ecoli, output_ecoli[2])
+np.save("Experiments/Data/Output/" + data_output_name_ecoli, output_ecoli[2])
 data_output_name_klebs = file_name_klebs+"_households.npy"
-np.save("UC-model/Data/Output/" + data_output_name_klebs, output_klebs[2])
+np.save("Experiments/Data/Output/" + data_output_name_klebs, output_klebs[2])
 
 data_output_name_ecoli = file_name_ecoli+"_Rt.npy"
-np.save("UC-model/Data/Output/" + data_output_name_ecoli, R_t_ecoli)
+np.save("Experiments/Data/Output/" + data_output_name_ecoli, R_t_ecoli)
 data_output_name_klebs = file_name_klebs+"_Rt.npy"
-np.save("UC-model/Data/Output/" + data_output_name_klebs, R_t_klebs)
-
-# ancestors, infected, households, R_t_beta_2, R_t_beta_1, R_t
+np.save("Experiments/Data/Output/" + data_output_name_klebs, R_t_klebs)
 
 
