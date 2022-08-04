@@ -1,0 +1,12 @@
+Time step 7
+Time step 77
+Time step 133
+Rejuvenation step 34.37895
+Acceptance rate during rejuvenation: 0.87
+Time step 135
+Time step 135
+Rejuvenation step 62.513664
+Acceptance rate during rejuvenation: 0.68
+Time step 161
+Rejuvenation step 60.68195
+Acceptance rate during rejuvenation: 0.65
