@@ -11,7 +11,7 @@ There are three folders in the repository:
   - RunEcoli: run the experiments on _E. coli_ data;
   - RunKpneumoniae: run the experiments on _K. penumoniae_ data;
   - RunRt: given the optimal parameters compute effective R and colonization state over time.
-- Tutorial: containing a tutroail on how to use the SMC^2 code and all the key quantities to set-up.
+- Tutorial: containing a tutorial on how to use the SMC^2 code and all the key quantities to set-up.
 
 # Synthetic Data
 We provide the synthetic data in "Cleaning/Data/Synthetic".
